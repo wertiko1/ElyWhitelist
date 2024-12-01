@@ -24,6 +24,7 @@
 
 ```yaml
 # Сообщение
+# Форматирование с помощью https://docs.advntr.dev/minimessage/format.html
 messages:
   notEnoughArguments: "<red>Недостаточно аргументов! Используйте /elywl <add|remove|on|off|list> [игрок]"
   playerAdded: "<green>Игрок %player% добавлен в белый список!"
