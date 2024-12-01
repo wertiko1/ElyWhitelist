@@ -6,6 +6,8 @@
 приложения или другие серверы, которые могут взаимодействовать с плагином для обновления белого списка, не обращаясь к
 серверу Minecraft напрямую.
 
+Эндпоинт расположен по пути http://localhost:8080/whitelist
+
 ## Команды
 
 `/elywl reload` - перезагрузить плагин
@@ -51,4 +53,42 @@ token: "XXXXX"
 ## Права
 
 `elywhitelist.use` - использование плагина
+
 `elywhitelist.reload` - перезагрузка плагина
+
+## Пример использования
+
+```python
+import requests
+
+WHITELIST_ENDPOINT = "http://localhost:8080/whitelist"
+AUTH_TOKEN = "XXXXX"
+PLAYER_NAME = "examplePlayer"
+
+def add_player_to_whitelist(player_name: str) -> None:
+    headers = {
+        "Authorization": AUTH_TOKEN
+    }
+    data = {
+        "player": player_name
+    }
+
+    try:
+        response = requests.post(WHITELIST_ENDPOINT, json=data, headers=headers)
+
+        if response.status_code == 200:
+            print("Успех:", response.text)
+        elif response.status_code == 409:
+            print("Конфликт:", response.text)
+        elif response.status_code == 400:
+            print("Ошибка в запросе:", response.text)
+        elif response.status_code == 401:
+            print("Неавторизован:", response.text)
+        else:
+            print("Ошибка:", response.status_code, response.text)
+
+    except requests.RequestException as e:
+        print("Ошибка подключения:", str(e))
+
+add_player(PLAYER_NAME)
+```
