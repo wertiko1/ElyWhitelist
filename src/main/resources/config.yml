@@ -1,0 +1,22 @@
+# Сообщение
+messages:
+  notEnoughArguments: "<red>Недостаточно аргументов! Используйте /elywl <add|remove|on|off|list> [игрок]"
+  playerAdded: "<green>Игрок %player% добавлен в белый список!"
+  playerAlreadyInWhitelist: "<yellow>Игрок %player% уже в белом списке."
+  playerRemoved: "<green>Игрок %player% удален из белого списка!"
+  playerNotFound: "<yellow>Игрок %player% не найден в белом списке."
+  whitelistEnabled: "<green>Белый список включен!"
+  whitelistDisabled: "<red>Белый список отключен!"
+  whitelistEmpty: "<yellow>Белый список пуст."
+  whitelistList: "<green>Белый список: %players%"
+  unknownCommand: "<red>Неизвестная команда! Используйте /elywl <add|remove|on|off|list>"
+  notInWhitelist: "<red>Вас нет в вайтлисте!"
+
+# Вкл/Выкл вайтлист
+whitelistEnabled: true
+noPermission: "Недостаточно прав!"
+
+# Порт вашего сервера
+port: 8080
+# Токен для подтверждения запроса
+token: "XXXXX"

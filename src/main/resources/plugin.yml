@@ -1,0 +1,14 @@
+name: ElyWhitelist
+version: '1.0-SNAPSHOT'
+main: me.wertiko.elyWhitelist.ElyWhitelist
+api-version: '1.21'
+
+commands:
+  elywl:
+    description: Main whitelist command
+
+permissions:
+  elywhitelist.use:
+    default: op
+  elywhitelist.reload:
+    default: op
